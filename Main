@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CIVIL 27</title>
+  <style>
+    body {
+      background-color: rgb(71, 68, 71);
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    h1 {
+      color: rgb(215, 219, 88);
+      text-align: center;
+    }
+
+    #searchBar {
+      display: block;
+      margin: 20px auto;
+      padding: 10px;
+      font-size: 16px;
+      width: 50%;
+      border-radius: 5px;
+      border: none;
+    }
+
+    div.mine {
+      width: 100%;
+      overflow: auto;
+      margin-left: 20px;
+    }
+
+    div.mine div {
+      width: 33%;
+      float: left;
+      font-size: 15px;
+      font-weight: bold;
+      line-height: 45px;
+      background-color: rgb(199, 205, 207);
+      color: black;
+      padding-left: 10px;
+    }
+
+    .name {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h1><i><b>"CIVIL 27"</b></i></h1>
+
+  <input type="text" id="searchBar" onkeyup="searchNames()" placeholder="Search your name...">
+
+  <div class="mine">
+    <div>
+      <span class="name">SANIA MIRZA</span>
+      <span class="name">MD.TURJAUN KHAN TURJO</span>
+      <span class="name">MD.SAIM KHAN</span>
+      <span class="name">MOUMITA DAS</span>
+      <span class="name">RIMJHIM SAHA</span>
+      <span class="name">ANISHA ANOWER</span>
+      <span class="name">AKIDA ADNIN</span>
+      <span class="name">JINAT RAHMAN</span>
+      <span class="name">MARIA ISLAM SOHA</span>
+      <span class="name">TANMOY DAKUA</span>
+      <span class="name">FARNAZ RAHMAN MALIHA</span>
+      <span class="name">ADIB MASRUR KHAN</span>
+      <span class="name">SHAH AHMED RUPAM</span>
+      <span class="name">LABEED LOHANI KHAN</span>
+      <span class="name">ABDULLAH AL FAHAT BHUIYA</span>
+      <span class="name">MANTASHA MURSHID</span>
+      <span class="name">TASFIA TABASSUM</span>
+      <span class="name">NAZIFA ZAMAL DIYA</span>
+      <span class="name">ASHFAK ZAMAN</span>
+      <span class="name">TAHMID IBNE HASHEM</span>
+      <span class="name">MD.MUFIDUL ISLAM</span>
+      <span class="name">MARUFA ISLAM SUCHONA</span>
+      <span class="name">SHAKIB AL HASAN</span>
+      <span class="name">MD.SABBIR UDDIN</span>
+      <span class="name">MAHDI FAIYAZ FARAZI</span>
+    </div>
+    <div>
+      <span class="name">MD.ALIF HOSSAIN</span>
+      <span class="name">K.M ZAHINUR RAHMAN</span>
+      <span class="name">HASNAIN AHMED SOUMIC</span>
+      <span class="name">FAHMID HOSSAIN</span>
+      <span class="name">RAMIS JOHRA ISHRA</span>
+      <span class="name">MD.ZEHAD AL SABA</span>
+      <span class="name">MD.SAIDUL ISLAM GIAM</span>
+      <span class="name">NAFIS MAHMUD</span>
+      <span class="name">MD.EMAD UDDIN EMU</span>
+      <span class="name">MD.TAKBIR HOSSAIN</span>
+      <span class="name">MST.TASFIA FAIRUS</span>
+      <span class="name">ISHRAT JAHAN RAISA</span>
+      <span class="name">MD.ASHRAFUL ISLAM SOHAN</span>
+      <span class="name">MD.RIADUZZAMAN MOLLA</span>
+      <span class="name">MD.SAYEED HOSSAIN SHIHAB</span>
+      <span class="name">MD.TOQI TAHMID RAYAT</span>
+    </div>
+    <div>
+      <span class="name">AFRIN JAHAN NADIA</span>
+      <span class="name">SUBORNA RANI ROY</span>
+      <span class="name">MD.ZAKIUL ISLAM AL JAMI</span>
+      <span class="name">IREENA ASHRAF</span>
+      <span class="name">MD.RUBAYET HOSSAIN RIHAM</span>
+      <span class="name">SADIA ISRAT SOBORNA</span>
+      <span class="name">KHANDAKAR MEHEDIN</span>
+      <span class="name">MD.TAIMUL ISLAM TANVIR</span>
+      <span class="name">SHAH MUSHFIQUR RAHMAN</span>
+      <span class="name">TAMANNA ISLAM ANIKA</span>
+      <span class="name">IMTIAZ AHMAD EMON</span>
+      <span class="name">DIBBO BISWAS</span> 
+    </div>
+  </div>
+
+  <script>
+    function searchNames() {
+      let input = document.getElementById("searchBar").value.toUpperCase();
+      let names = document.getElementsByClassName("name");
+
+      for (let i = 0; i < names.length; i++) {
+        let txt = names[i].textContent || names[i].innerText;
+        if (txt.toUpperCase().indexOf(input) > -1) {
+          names[i].style.display = "";
+        } else {
+          names[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+</body>
+</html>
