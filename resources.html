@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Resources | CIVIL-27</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Handwriting-Draft-Free-Version';
+      src: url('https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/HandwritingDraftFreeVersion-9zlL.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body {
+      position: relative;
+      min-height: 100vh;
+      margin: 0;
+      background: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.7)), 
+                  url('https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/Picsart_25-06-05_23-56-20-270.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Quicksand', 'Georgia', 'Times New Roman', Times, serif;
+      color: #f5f6f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1 {
+      font-family: 'Handwriting-Draft-Free-Version', 'Montserrat', Georgia, serif;
+      font-size: 3.5em;
+      font-weight: 400;
+      letter-spacing: 3px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.8);
+      text-transform: uppercase;
+      text-align: center;
+      color: #f5c769;
+      background: linear-gradient(90deg, #d4a017, #f5c769);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .login-container, .resource-container {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 25px;
+      padding: 30px;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
+      border: 2px solid rgba(212, 160, 23, 0.3);
+      backdrop-filter: blur(5px);
+      text-align: center;
+    }
+
+    .login-container input {
+      display: block;
+      margin: 15px auto;
+      padding: 12px 20px;
+      font-size: 1.1em;
+      width: 80%;
+      border-radius: 20px;
+      border: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: #f5f6f5;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+    .login-container input:focus {
+      background: rgba(255, 255, 255, 0.2);
+      outline: 2px solid #d4a017;
+    }
+    .login-container input::placeholder {
+      color: #b2bec3;
+    }
+
+    .login-container button, .logout-btn {
+      padding: 10px 20px;
+      font-size: 1em;
+      font-weight: 700;
+      color: #0a192f;
+      background: linear-gradient(90deg, #d4a017, #f5c769);
+      border: 3px solid #f5c769;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(212, 160, 23, 0.4);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .login-container button:hover, .logout-btn:hover {
+      background: linear-gradient(90deg, #f5c769, #d4a017);
+      transform: translateY(-2px);
+    }
+
+    #error {
+      color: red;
+      margin: 10px 0;
+      display: none;
+    }
+
+    .resource-container {
+      display: none;
+    }
+    .resource-container h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8em;
+      color: rgb(200, 160, 80);
+      margin-bottom: 20px;
+    }
+    .resource-container ul {
+      list-style: none;
+      padding: 0;
+    }
+    .resource-container li {
+      margin: 10px 0;
+    }
+    .resource-container a {
+      color: rgb(200, 160, 80);
+      text-decoration: none;
+      font-size: 1.1em;
+      transition: all 0.3s ease;
+    }
+    .resource-container a:hover {
+      color: #f5c769;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 700px) {
+      h1 { font-size: 2.5em; }
+      .login-container, .resource-container { width: 95%; }
+      .login-container input { width: 90%; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Resources</h1>
+  <div class="login-container" id="loginContainer">
+    <form id="loginForm">
+      <input type="text" id="userId" placeholder="Enter ID (e.g., CE27001)" required>
+      <input type="password" id="password" placeholder="Enter Password" required>
+      <button type="submit">Login</button>
+    </form>
+    <div id="error">Invalid ID or Password</div>
+  </div>
+  <div class="resource-container" id="resourceContainer">
+    <h2>Available Resources</h2>
+    <ul>
+      <li><a href="#" target="_blank">Slide 1: Introduction to Civil Engineering (Placeholder)</a></li>
+      <li><a href="#" target="_blank">Slide 2: Structural Analysis (Placeholder)</a></li>
+      <li><a href="#" target="_blank">Slide 3: Geotechnical Engineering (Placeholder)</a></li>
+    </ul>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
+
+  <script>
+    // Name data for authentication (same as in index.html)
+    const nameData = [
+      { id: "CE27001", text: "SANIA MIRZA", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27002", text: "MD.TURJAUN KHAN TURJO", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27003", text: "MD.SAIM KHAN", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27004", text: "MOUMITA DAS", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27005", text: "RIMJHIM SAHA", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27006", text: "ANISHA ANOWER", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27007", text: "AKIDA ADNIN", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27008", text: "JINAT RAHMAN", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27009", text: "MARIA ISLAM SOHA", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27010", text: "TANMOY DAKUA", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27011", text: "FARNAZ RAHMAN MALIHA", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27012", text: "ADIB MASRUR KHAN", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27013", text: "SHAH AHMED RUPAM", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27014", text: "LABEED LOHANI KHAN", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27015", text: "ABDULLAH AL FAHAT BHUIYA", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27016", text: "MANTASHA MURSHID", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27017", text: "TASFIA TABASSUM", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27018", text: "NAZIFA ZAMAL DIYA", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27019", text: "ASHFAK ZAMAN", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27020", text: "TAHMID IBNE HASHEM", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/20240402_125927.jpg", bloodgroup: "A+" },
+      { id: "CE27021", text: "MD.MUFIDUL ISLAM", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27022", text: "MARUFA ISLAM SUCHONA", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27023", text: "SHAKIB AL HASAN", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27024", text: "MD.SABBIR UDDIN", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27025", text: "MAHDI FAIYAZ FARAZI", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27026", text: "MD.ALIF HOSSAIN", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27027", text: "K.M ZAHINUR RAHMAN", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27028", text: "HASNAIN AHMED SOUMIC", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27029", text: "FAHMID HOSSAIN", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27030", text: "RAMIS JOHRA ISHRA", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27031", text: "MD.ZEHAD AL SABA", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27032", text: "MD.SAIDUL ISLAM GIAM", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27033", text: "NAFIS MAHMUD", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27034", text: "MD.EMAD UDDIN EMU", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27035", text: "MD.TAKBIR HOSSAIN", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27036", text: "MST.TASFIA FAIRUS", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27037", text: "ISHRAT JAHAN RAISA", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27038", text: "MD.ASHRAFUL ISLAM SOHAN", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27039", text: "MD.RIADUZZAMAN MOLLA", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27040", text: "MD.SAYEED HOSSAIN SHIHAB", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27041", text: "MD.TOQI TAHMID RAYAT", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27042", text: "AFRIN JAHAN NADIA", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27043", text: "SUBORNA RANI ROY", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27044", text: "MD.ZAKIUL ISLAM AL JAMI", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27045", text: "IREENA ASHRAF", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27046", text: "MD.RUBAYET HOSSAIN RIHAM", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27047", text: "SADIA ISRAT SOBORNA", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27048", text: "KHANDAKAR MEHEDIN", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27049", text: "MD.TAIMUL ISLAM TANVIR", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27050", text: "SHAH MUSHFIQUR RAHMAN", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27051", text: "TAMANNA ISLAM ANIKA", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27052", text: "IMTIAZ AHMAD EMON", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27053", text: "DIBBO BISWAS", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27054", text: "ARABY WASIN", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27055", text: "ARUNAV BHATTACHARJEE", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27056", text: "RAKIB SHIHAB", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" },
+      { id: "CE27057", text: "TANZILA HASAN", image: "https://raw.githubusercontent.com/tahmidhashem/CIVIL-27/main/received_720045293734431.jpeg", bloodgroup: "" }
+    ];
+
+    // Authentication logic
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const userId = document.getElementById("userId").value;
+      const password = document.getElementById("password").value;
+      const error = document.getElementById("error");
+      const loginContainer = document.getElementById("loginContainer");
+      const resourceContainer = document.getElementById("resourceContainer");
+
+      // Check if ID exists in nameData and password is "civil27"
+      const isValidId = nameData.some(user => user.id === userId);
+      if (isValidId && password === "civil27") {
+        localStorage.setItem("isAuthenticated", "true");
+        loginContainer.style.display = "none";
+        resourceContainer.style.display = "block";
+        error.style.display = "none";
+      } else {
+        error.style.display = "block";
+      }
+    });
+
+    // Check authentication on page load
+    if (localStorage.getItem("isAuthenticated") === "true") {
+      document.getElementById("loginContainer").style.display = "none";
+      document.getElementById("resourceContainer").style.display = "block";
+    }
+
+    // Logout function
+    function logout() {
+      localStorage.removeItem("isAuthenticated");
+      document.getElementById("loginContainer").style.display = "block";
+      document.getElementById("resourceContainer").style.display = "none";
+    }
+  </script>
+</body>
+</html>
